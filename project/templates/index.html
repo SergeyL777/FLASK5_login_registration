@@ -1,72 +1,123 @@
 {% extends "base.html" %}
 
+{% block title %}Главная{% endblock %}
+
 {% block content %}
-<section id="about" class="container">
-    <h2>Обо мне</h2>
-    <img src="{{ url_for('static', filename='img/example.jpg') }}" alt="Моё фото" class="profile-img">
-    <p>Привет! Я изучаю веб‑разработку и создаю этот блог, чтобы делиться своими достижениями.</p>
-    <blockquote>
-        «Обучение — это путешествие, а не пункт назначения.»
-    </blockquote>
-</section>
+<section class="container home-section">
+    <div class="hero">
+        <h1>Добро пожаловать в мой блог достижений!</h1>
+        <p class="lead">Здесь я делюсь своим прогрессом в изучении веб‑разработки и программирования.</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('programmer_diary') }}" class="btn btn-primary">Перейти к дневнику программиста</a>
+            <a href="#about" class="btn btn-secondary">Узнать обо мне</a>
+        </div>
+    </div>
 
-<section id="skills" class="container">
-    <h2>Мои навыки</h2>
-    <ul>
-        <li>HTML & CSS</li>
-        <li>Python</li>
-        <li>Flask</li>
-        <li>Основы JavaScript</li>
-    </ul>
-</section>
+    <section id="about" class="about-section">
+        <h2>Обо мне</h2>
+        <div class="about-content">
+            <div class="profile">
+                <img src="{{ url_for('static', filename='img/example.jpg') }}"
+                     alt="Моё фото" class="profile-img">
+                <div class="profile-info">
+                    <h3>Начинающий веб‑разработчик</h3>
+            <p>Привет! Я изучаю веб‑разработку и создаю этот блог, чтобы делиться своими достижениями.</p>
+                </div>
+            </div>
+            <blockquote class="motto">
+                «Обучение — это путешествие, а не пункт назначения.»
+            </blockquote>
+        </div>
+    </section>
 
-<section id="progress" class="container">
-    <h2>Прогресс обучения</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Тема</th>
-                <th>Процент выполнения темы</th>
-                <th>Процент выполнения ДЗ</th>
-                <th>Комментарии</th>
-                <th>Дата начала</th>
-                <th>Дата завершения</th>
-                <th>Сложность (1–5)</th>
-                <th>Приоритет</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Основы HTML</td>
-                <td>100%</td>
-                <td>95%</td>
-                <td>Отлично освоил базовые теги</td>
-                <td>01.05.2024</td>
-                <td>10.05.2024</td>
-                <td>2</td>
-                <td>Высокий</td>
-            </tr>
-            <tr>
-                <td>Основы CSS</td>
-                <td>85%</td>
-                <td>80%</td>
-                <td>Изучаю продвинутые селекторы</td>
-                <td>11.05.2024</td>
-                <td>20.05.2024</td>
-                <td>3</td>
-                <td>Высокий</td>
-            </tr>
-            <tr>
-                <td>Основы Flask</td>
-                <td>70%</td>
-                <td>65%</td>
-                <td>Изучаю маршрутизацию и шаблоны</td>
-                <td>21.05.2024</td>
-                <td>30.05.2024</td>
-                <td>4</td>
-                <td>Средний</td>
-            </tr>
-        </tbody>
-    </table>
+    <section id="skills" class="skills-section">
+        <h2>Мои навыки</h2>
+        <ul class="skills-list">
+            <li class="skill-item">
+                <span class="skill-name">HTML & CSS</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span class="skill-name">Python</span>
+                <div class="skill-bar">
+            <div class="skill-progress" style="width: 75%"></div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span class="skill-name">Flask</span>
+                <div class="skill-bar">
+            <div class="skill-progress" style="width: 60%"></div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span class="skill-name">Основы JavaScript</span>
+                <div class="skill-bar">
+            <div class="skill-progress" style="width: 50%"></div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section id="progress" class="progress-section">
+        <h2>Прогресс обучения</h2>
+        <table class="progress-table">
+            <thead>
+                <tr>
+                    <th>Тема</th>
+                    <th>Процент выполнения темы</th>
+                    <th>Процент выполнения ДЗ</th>
+                    <th>Комментарии</th>
+            <th>Дата начала</th>
+            <th>Дата завершения</th>
+            <th>Сложность (1–5)</th>
+            <th>Приоритет</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Основы HTML</td>
+            <td>100%</td>
+            <td>95%</td>
+            <td>Отлично освоил базовые теги</td>
+            <td>01.05.2026</td>
+            <td>10.05.2026</td>
+            <td>2</td>
+            <td>Высокий</td>
+                </tr>
+                <tr>
+            <td>Основы CSS</td>
+            <td>85%</td>
+            <td>80%</td>
+            <td>Изучаю продвинутые селекторы</td>
+            <td>11.05.2026</td>
+            <td>20.05.2026</td>
+            <td>3</td>
+            <td>Высокий</td>
+                </tr>
+                <tr>
+            <td>Основы Flask</td>
+            <td>70%</td>
+            <td>65%</td>
+            <td>Изучаю маршрутизацию и шаблоны</td>
+            <td>21.05.2026</td>
+            <td>30.05.2026</td>
+            <td>4</td>
+            <td>Средний</td>
+                </tr>
+                <tr>
+            <td>Работа с bd в Flask</td>
+            <td>97%</td>
+            <td>90%</td>
+            <td>Изучаю миграцию bd в flask</td>
+            <td>31.05.2026</td>
+            <td>02.06.2026</td>
+            <td>5</td>
+            <td>Высокий</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 </section>
 {% endblock %}
